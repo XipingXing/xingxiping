@@ -12,6 +12,7 @@
 
   <artifactId>platform-sell-user</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,4 +21,9 @@
   <dependencies>
 
   </dependencies>
+  
+  <!-- 打成可执行jar包，使用dubbo提供的main方法执行 -->
+  <build>
+  
+  </build>
 </project>
