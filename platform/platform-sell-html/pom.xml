@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <name>platform-common-core</name>
+  <name>platform-sell-html</name>
 
   <parent>
     <groupId>org.xxp</groupId>
@@ -10,8 +10,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>platform-common-core</artifactId>
+  <artifactId>platform-sell-html</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,4 +21,8 @@
   <dependencies>
 
   </dependencies>
+
+  <build>
+    <finalName>platform-sell-html</finalName>
+  </build>
 </project>
