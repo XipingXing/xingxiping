@@ -11,7 +11,6 @@
   </parent>
   
   <artifactId>platform-sell-api</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
   <properties>
@@ -19,7 +18,22 @@
   </properties>
 
   <dependencies>
-
+    <!-- 子项目间依赖配置 sell-api 项目依赖 platform-common-core,platform-common-config,platform-sell-dubboInterface -->
+    <dependency>
+      <groupId>org.xxp</groupId>
+      <artifactId>platform-common-core</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xxp</groupId>
+      <artifactId>platform-common-config</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xxp</groupId>
+      <artifactId>platform-sell-dubboInterface</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   
   <build>
