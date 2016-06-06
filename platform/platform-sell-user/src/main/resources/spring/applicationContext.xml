@@ -22,21 +22,8 @@
   <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
   
   <context:component-scan base-package="org.platform.sell.user"/>
-  
-  <aop:aspectj-autoproxy/>
-  <aop:config proxy-target-class="true">
-    <aop:pointcut expression="execution(* org.platform.sell.user.service.impl.*Impl.*(..))" id="txPointcut"/>
-    <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
-  </aop:config>
-  
-  <tx:advice id="txAdvice" transaction-manager="transactionManager">
-    <tx:attributes>
-      <tx:method name="*"/>
-    </tx:attributes>
-  </tx:advice>
-    
-  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-    <property name="dataSource" ref="dataSource"/>
-  </bean>
 
+  <import resource="classpath*:spring/applicationContext-datesource.xml"/>
+  <import resource="classpath*:spring/applicationContext-dubbo.xml"/>
+  
 </beans>

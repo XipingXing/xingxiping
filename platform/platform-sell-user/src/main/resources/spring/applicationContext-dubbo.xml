@@ -11,11 +11,11 @@
   <dubbo:registry protocol="zookeeper"
     address="${sell.dubbo.zookeeper.address}" />
 
-  <dubbo:monitor address="${sell.dubbo.monitor.address}" />
+  <!-- <dubbo:monitor address="${sell.dubbo.monitor.address}" /> -->
   <dubbo:protocol name="dubbo" port="20880" />
 
-<!--   <dubbo:service -->
-<!--     interface="com.xinhe99.account.dubboService.user.service.TestDubboService" -->
-<!--     ref="testDubboService" timeout="10000" /> -->
+  <dubbo:service
+    interface="org.platform.sell.dubboInterface.user.dubboService.TestDubboService"
+    ref="testDubboService" timeout="10000" />
 
 </beans>
