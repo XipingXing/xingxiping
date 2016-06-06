@@ -39,16 +39,18 @@
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>jsp-api</artifactId>
-      <version>2.2</version>
-    </dependency>
+    
+    <!-- 注释掉 javax.servlet.jar 和 javax.servlet.jsp.jar 如果有出现缺少这两个jar包的，请自行解决此问题 -->
+<!--     <dependency> -->
+<!--       <groupId>javax.servlet</groupId> -->
+<!--       <artifactId>servlet-api</artifactId> -->
+<!--       <version>2.5</version> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>javax.servlet.jsp</groupId> -->
+<!--       <artifactId>jsp-api</artifactId> -->
+<!--       <version>2.2</version> -->
+<!--     </dependency> -->
 
     <!-- spring jar包引用 -->
     <dependency>
