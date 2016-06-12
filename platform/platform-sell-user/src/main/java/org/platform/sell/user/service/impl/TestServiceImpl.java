@@ -14,8 +14,8 @@ public class TestServiceImpl implements TestService{
   private TestDao testDao;
 
   @Override
-  public TestModel getTest() {
-    return testDao.get();
+  public TestModel getTest(int id) {
+    return testDao.getById(id);
   }
 
 }
