@@ -42,6 +42,9 @@
     <property name="sessionFactory" ref="sessionFactory" />
   </bean>
 
+  <tx:annotation-driven proxy-target-class="true"
+    transaction-manager="transactionManager" />
+
   <aop:aspectj-autoproxy />
 
   <aop:config proxy-target-class="true">

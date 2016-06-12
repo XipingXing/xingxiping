@@ -21,12 +21,9 @@
     </property>
   </bean>
 
-  <tx:annotation-driven proxy-target-class="true"
-    transaction-manager="transactionManager" />
-    
 
   <import resource="classpath*:spring/applicationContext-datasource.xml" />
   <import resource="classpath*:spring/applicationContext-dubbo.xml" />
-  
+
 
 </beans>
