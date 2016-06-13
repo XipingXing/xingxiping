@@ -19,7 +19,7 @@ public abstract class HibernateBaseDao<T> extends HibernateBase<T> implements Ba
 
   @Override
   public int save(T t) {
-    return (int) hibernateTemplate.save(t);
+    return (Integer) hibernateTemplate.save(t);
   }
 
   @Override
