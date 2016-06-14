@@ -60,6 +60,7 @@ public abstract class HibernateBaseDao<T> extends HibernateBase<T> implements Ba
     return page;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public List<T> getByLike(String[] names, String[] values) {
     if (names == null || values == null || names.length != values.length) {
@@ -84,6 +85,7 @@ public abstract class HibernateBaseDao<T> extends HibernateBase<T> implements Ba
     return query.list();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Page<T> getPageByLike(String[] names, String[] values, Page<T> page) {
     if (names == null || values == null || names.length != values.length || page == null || page.getIndexPage() == 0
@@ -114,6 +116,7 @@ public abstract class HibernateBaseDao<T> extends HibernateBase<T> implements Ba
     return page;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public List<T> queryByHql(String hqlString, Map<String, Object> params) {
     Session session = sessionFactory.getCurrentSession();

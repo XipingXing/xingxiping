@@ -17,12 +17,13 @@ public abstract class HibernateBase<T> {
 
   protected Class<T> type;
 
+  @SuppressWarnings("unchecked")
   public HibernateBase() {
     Type genType = getClass().getGenericSuperclass();
     if (genType != null && genType instanceof Type) {
       Type[] types = ((ParameterizedType) genType).getActualTypeArguments();
       if (types != null && types.length > 0)
-        type = (Class) types[0];
+        type = (Class<T>) types[0];
     }
   }
 
