@@ -111,8 +111,10 @@ public abstract class HibernateBaseDao<T> extends HibernateBase<T> implements Ba
     query.setFirstResult((page.getIndexPage() - 1) * page.getPageSize());
     query.setMaxResults(page.getPageSize());
 
+    List<T> countList = getByLike(names, values);
+
+    page.setCount((countList == null || countList.isEmpty()) ? 0 : countList.size());
     page.setEntityList(query.list());
-    page.setCount(getByLike(names, values).size());
     return page;
   }
 
@@ -126,6 +128,30 @@ public abstract class HibernateBaseDao<T> extends HibernateBase<T> implements Ba
       for (Entry<String, Object> en : set) {
         query.setParameter(en.getKey(), en.getValue());
       }
+    }
+    return query.list();
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public List<T> queryByHql(String hqlString, Object[] params) {
+    Session session = sessionFactory.getCurrentSession();
+    Query query = session.createQuery(hqlString);
+    if (params != null && params.length > 0) {
+      for (int i = 0; i < params.length; i++) {
+        query.setParameter(i, params[i]);
+      }
+    }
+    return query.list();
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public List<T> queryByHql(String hqlString, T params) {
+    Session session = sessionFactory.getCurrentSession();
+    Query query = session.createQuery(hqlString);
+    if (params != null) {
+      query.setProperties(params);
     }
     return query.list();
   }

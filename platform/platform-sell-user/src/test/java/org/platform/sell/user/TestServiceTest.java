@@ -22,7 +22,7 @@ public class TestServiceTest {
     testService.getTest(1);
   }
 
-  @Test
+//  @Test
   public void getTest1() {
     testService.getTest(1);
   }

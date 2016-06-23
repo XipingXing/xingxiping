@@ -12,6 +12,10 @@ public class TestServiceImpl implements TestService{
   
   @Resource(name="testDao")
   private TestDao testDao;
+  
+  static {
+    System.out.println("1111111");
+  }
 
   @Override
   public TestModel getTest(int id) {

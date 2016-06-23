@@ -82,12 +82,30 @@ public interface BaseDao<T> {
   public Page<T> getPageByLike(String[] names, String[] values, Page<T> page);
 
   /**
-   * 执行hql查询，根据map对hql参数赋值
+   * 执行hql查询，根据map对hql参数赋值 (hql : from Table t where t.column1 = :key)
    * 
    * @param hqlString
    * @param params
    * @return
    */
   public List<T> queryByHql(String hqlString, Map<String, Object> params);
+
+  /**
+   * 执行hql查询，根据数据顺序对参数赋值(hql : from Table t where t.column1 = ?)
+   * 
+   * @param hqlString
+   * @param params
+   * @return
+   */
+  public List<T> queryByHql(String hqlString, Object[] params);
+
+  /**
+   * 执行hql查询，根据实体属性对参数赋值(hql : from Table t where t.column1 = :property1)
+   * 
+   * @param hqlString
+   * @param params
+   * @return
+   */
+  public List<T> queryByHql(String hqlString, T params);
 
 }
