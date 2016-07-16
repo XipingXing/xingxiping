@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>platform-sell-html</display-name>
   
   <context-param>
     <param-name>webAppRootKey</param-name>
@@ -11,6 +11,6 @@
   </context-param>
   
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>platform-sell/user/login.html</welcome-file>
   </welcome-file-list>
 </web-app>
